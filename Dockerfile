@@ -8,9 +8,12 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-RUN git clone https://github.com/lochana2710-sys/Z-BOT_V.1 .
 
-RUN npm install
+COPY . .
+
+
+RUN npm install express @whiskeysockets/baileys pino yt-search @distube/ytdl-core @hapi/boom
+
 
 ENV PORT=7860
 EXPOSE 7860
