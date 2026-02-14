@@ -8,12 +8,11 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY package*.json ./
+RUN git clone https://github.com/lochana2710-sys/Z-BOT_V.1 .
+
 RUN npm install
 
-COPY . .
-
-EXPOSE 8000
+ENV PORT=7860
+EXPOSE 7860
 
 CMD ["node", "index.js"]
-
